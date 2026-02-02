@@ -33,12 +33,12 @@ int main()
     return 0;
 }
 
-void input(int a[N][N], int r, int c)
+void input(int a[N][N], int r, int col)
 {
     int i, j;
     for (i = 0; i < r; i++)
     {
-        for (j = 0; j < c; j++)
+        for (j = 0; j < col; j++)
         {
             printf("Enter element [%d][%d]: ", i + 1, j + 1);
             scanf("%d", &a[i][j]);
