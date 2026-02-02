@@ -14,7 +14,9 @@ int main()
 }
 void input(int a[N][N])
 {
-    int i, j;
+    int i, j, n;
+    printf("Enter the number");
+    scanf("%d", &n);
     printf("Enter elements of the matrix:\n");
     for (i = 0; i < 3; i++)
     {
