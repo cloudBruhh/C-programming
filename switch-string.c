@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <string.h>
+
 int main()
 {
     char a[200], b[200];
@@ -8,10 +8,6 @@ int main()
     fgets(a, sizeof(a), stdin);
     printf("Enter the second string:");
     fgets(b, sizeof(b), stdin);
-
-    // remove trailing newline if present
-    a[strcspn(a, "\n")] = '\0';
-    b[strcspn(b, "\n")] = '\0';
 
     printf("\n 1. For copying string 1 to string 2 \n 2. For concatenating string 1 and string 2 \n 3.Length of both strings \n 4. For comparing string 1 and string 2 \n");
     printf("Enter your choice:");
@@ -29,8 +25,8 @@ int main()
         printf("String 1 after copying string 2: %s\n", a);
         break;
     case 2:
-        i = 0;
 
+        i = 0;
         for (i = 0; a[i] != '\0'; i++)
             ;
         for (j = 0; b[j] != '\0'; j++)
@@ -40,6 +36,7 @@ int main()
         }
         a[i] = '\0';
         printf("String 1 after concatenation: %s\n", a);
+        fflush(stdout);
         break;
     case 3:
         i = 0;
@@ -57,25 +54,22 @@ int main()
         break;
     case 4:
         i = 0;
+        int equal = 1;
         while (a[i] != '\0' && b[i] != '\0')
         {
             if (a[i] != b[i])
             {
                 printf("Strings are not equal.\n");
+                equal = 0;
                 break;
             }
             i++;
         }
-
-        if (a[i] == '\0' && b[i] == '\0')
+        if (equal && a[i] == '\0' && b[i] == '\0')
         {
             printf("Strings are equal.\n");
         }
-        else if (a[i] != b[i])
-        {
-            // already handled above, but keeps logic clear if loop exits early
-        }
-        else
+        else if (equal)
         {
             printf("Strings are not equal.\n");
         }
