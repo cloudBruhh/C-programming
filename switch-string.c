@@ -9,6 +9,29 @@ int main()
     printf("Enter the second string:");
     fgets(b, sizeof(b), stdin);
 
+    // Remove newlines from both strings
+    i = 0;
+    while (a[i] != '\0')
+    {
+        if (a[i] == '\n')
+        {
+            a[i] = '\0';
+            break;
+        }
+        i++;
+    }
+
+    j = 0;
+    while (b[j] != '\0')
+    {
+        if (b[j] == '\n')
+        {
+            b[j] = '\0';
+            break;
+        }
+        j++;
+    }
+
     printf("\n 1. For copying string 1 to string 2 \n 2. For concatenating string 1 and string 2 \n 3.Length of both strings \n 4. For comparing string 1 and string 2 \n");
     printf("Enter your choice:");
     scanf("%d", &k);
