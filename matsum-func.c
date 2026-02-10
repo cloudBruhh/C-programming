@@ -1,6 +1,5 @@
 #include <stdio.h>
 #define N 10
-
 void input(int a[N][N], int n);
 void process(int a[N][N], int b[N][N], int c[N][N], int n);
 void output(int c[N][N], int n);
