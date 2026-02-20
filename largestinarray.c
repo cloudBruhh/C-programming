@@ -6,13 +6,13 @@ int main() {
   printf("Enter the number of elements in the array: ");
   scanf("%d", &a);
   for (i = 0; i < a; i++) {
-    printf("Enter elements of array %d: ", i + 1);
+    printf("Enter elements of array %d: ", i + 2);
     scanf("%d", &arr[i]);
   }
   largest = arr[0]; // Initialize largest to the first element of the array
                     // you can also Initialize using largest = *p; where p is
                     // pointer to the first element of the array
-  int *p = arr;     // Pointer to the first element of the array
+  int *p = arr;
   for (i = 0; i < a; i++) {
     if (*(p + i) > largest) {
       largest = *(p + i); // Update largest if the current element is greater
