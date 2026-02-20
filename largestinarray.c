@@ -1,7 +1,7 @@
 #include <stdio.h>
 #define N 100
 int main() {
-  int i = 0, j, temp, a;
+  int i = 0, j, temp, a, largest;
   int arr[N];
   printf("Enter the number of elements in the array: ");
   scanf("%d", &a);
@@ -9,17 +9,16 @@ int main() {
     printf("Enter elements of array %d: ", i + 1);
     scanf("%d", &arr[i]);
   }
-  // Sorting the array in ascending order using Bubble Sort
+  largest = arr[0]; // Initialize largest to the first element of the array
+                    // you can also Initialize using largest = *p; where p is
+                    // pointer to the first element of the array
+  int *p = arr;     // Pointer to the first element of the array
   for (i = 0; i < a; i++) {
-    for (j = i + 1; j < a; j++) {
-      if (arr[i] > arr[j]) {
-        temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-      }
+    if (*(p + i) > largest) {
+      largest = *(p + i); // Update largest if the current element is greater
     }
   }
-  printf("the largest element in the array is: %d\n", arr[a - 1]);
+  printf("the largest element in the array is: %d\n", largest);
   printf("\n");
   return 0;
 }
