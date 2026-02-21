@@ -6,7 +6,7 @@ int main() {
   printf("Enter the number of elements in the array: ");
   scanf("%d", &a);
   for (i = 0; i < a; i++) {
-    printf("Enter elements of array %d: ", i + 2);
+    printf("Enter elements of array %d: ", i + 1);
     scanf("%d", &arr[i]);
   }
   largest = arr[0]; // Initialize largest to the first element of the array
