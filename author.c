@@ -20,7 +20,6 @@ int main() {
   printf("Enter book_id: ");
   scanf("%d", &b1.book_id);
   getchar();
-
   printf("Enter title: ");
   fgets(b2.title, sizeof(b2.title), stdin);
   b2.title[strcspn(b2.title, "\n")] = '\0';
